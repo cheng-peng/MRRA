@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.cxp.lib_common.listener.OnClickListenter" />
+
+        <variable
+            name="onClickListenter"
+            type="OnClickListenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/livedata_bt"
+            android:onClick="@{()->onClickListenter.onClick(@id/livedata_bt)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义LiveData" />
+
+
+        <FrameLayout
+            android:id="@+id/livedata_fl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</layout>

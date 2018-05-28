@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.max_sdk
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.max_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation deps.junit
+
+    //google
+    api deps.support.constraint_layout
+    api deps.support.appcompat
+
+    //glide
+    api deps.glide.glide
+    annotationProcessor deps.glide.compiler
+
+    //rxjava
+    api deps.rxjava2
+    api deps.rx_android
+
+    //retrofit
+    api deps.retrofit.retrofit
+    api deps.retrofit.gson
+    api deps.retrofit.adapter_rxjava2
+
+    //okhttp
+    api deps.okhttp.okhttp3
+    api deps.okhttp.okhttp3_logging_interceptor
+
+    //gson
+    api deps.gson
+
+    //stetho
+    api deps.stetho.stetho
+    api deps.stetho.stetho_okhttp3
+
+    //编辑数据库，使用方法：手机要和电脑在同一wifi下，然后运行程序后，打开http://XXX.XXX.X.XXX:8080    XXX就是你手机号的IP  在设置->关于手机->状态消息里有IP   (可能有点慢)
+    debugImplementation deps.debug_db
+
+    //arouter
+    api deps.arouter.arouter_api
+
+    //logger
+    api deps.logger
+
+    //butterknife
+    api deps.butterknife.butterknife
+
+    //lifecycles
+    api deps.lifecycles.extensions
+    api deps.lifecycles.runtime
+
+    //room
+    api deps.room.runtime
+}

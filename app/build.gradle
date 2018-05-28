@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+static def buildTime() {
+    return new Date().format("yyyyMMdd");
+}
+
+android {
+    compileSdkVersion build_versions.max_sdk
+    defaultConfig {
+        applicationId "com.cxp.mrra"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.max_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+        multiDexEnabled true
+        //打包时间
+        resValue "string", "build_time", buildTime()
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        config {
+            storeFile file(keystoreProperties['KEYSTORE_FILE'])
+            storePassword keystoreProperties['KEYSTORE_PASSWORD']
+            keyAlias keystoreProperties['KEY_ALIAS']
+            keyPassword keystoreProperties['KEY_PASSWORD']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            //更改AndroidManifest.xml中预先定义好占位符信息
+            //manifestPlaceholders = [app_icon: "@drawable/icon"]
+            // 不显示Log
+            buildConfigField "boolean", "LEO_DEBUG", "false"
+            //是否zip对齐
+            zipAlignEnabled true
+            // 缩减resource文件
+            shrinkResources true
+            //Proguard
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.config
+        }
+
+        debug {
+            //给applicationId添加后缀“.debug”
+            applicationIdSuffix ".debug"
+            //manifestPlaceholders = [app_icon: "@drawable/launch_beta"]
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            debuggable true
+            //签名
+            signingConfig signingConfigs.config
+        }
+    }
+
+    //引入DataBinding
+    dataBinding {
+        enabled = true
+    }
+
+    //禁用lint
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.support.multidex
+    implementation project(':lib_common')
+    if (!isModuleMain.toBoolean()) {
+        implementation project(':module_main')
+    }
+    if (!isModuleGirls.toBoolean()) {
+        implementation project(':module_girls')
+    }
+    if (!isModuleNews.toBoolean()) {
+        implementation project(':module_news')
+    }
+}

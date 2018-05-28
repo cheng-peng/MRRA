@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cxp.module_main" >
+    <application android:theme="@style/AppTheme">
+        <activity android:name=".ui.system.activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.test.activity.TestActivity"/>
+        <!--Databinding  Begin-->
+        <activity android:name=".ui.test.activity.databinding.DataBinDingActivity"/>
+        <activity android:name=".ui.test.activity.databinding.UserInfoActivity"/>
+        <activity android:name=".ui.test.activity.databinding.CollectionActivity"/>
+        <activity android:name=".ui.test.activity.databinding.TwoBindingActivity"/>
+        <activity android:name=".ui.test.activity.databinding.IncludeActivity"/>
+        <!--Databinding  End-->
+
+        <!--Lifecycle  Begin-->
+        <activity android:name=".ui.test.activity.lifecycle.LifecycleActivity"/>
+        <!--Lifecycle  End-->
+
+        <!--Room  Begin-->
+        <activity android:name=".ui.test.activity.room.RoomActivity"/>
+        <!--Room  End-->
+
+        <!--LiveData  Begin-->
+        <activity android:name=".ui.test.activity.livedata.LiveDataActivity"/>
+        <activity android:name=".ui.test.activity.livedata.custom.MyLiveDataActivity"/>
+        <!--LiveData  End-->
+
+        <!--ViewModel  Begin-->
+        <activity android:name=".ui.test.activity.viewmodel.ViewModelActivity"/>
+        <!--ViewModel  End-->
+
+    </application>
+
+</manifest>

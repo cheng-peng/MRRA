@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="onClickListenter"
+            type="com.cxp.lib_common.listener.OnClickListenter"/>
+    </data>
+
+    <ScrollView
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:onClick="@{()->onClickListenter.onClick(@id/test_databinding)}"
+                android:text="Databinding使用"
+                android:textAllCaps="false"
+                android:id="@+id/test_databinding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:onClick="@{()->onClickListenter.onClick(@id/test_lifecycle)}"
+                android:text="Lifecycle使用"
+                android:textAllCaps="false"
+                android:id="@+id/test_lifecycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:onClick="@{()->onClickListenter.onClick(@id/test_livedata)}"
+                android:text="LiveData使用"
+                android:textAllCaps="false"
+                android:id="@+id/test_livedata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:onClick="@{()->onClickListenter.onClick(@id/test_viewmodel)}"
+                android:text="ViewModel使用"
+                android:textAllCaps="false"
+                android:id="@+id/test_viewmodel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:onClick="@{()->onClickListenter.onClick(@id/test_room)}"
+                android:text="Room使用"
+                android:textAllCaps="false"
+                android:id="@+id/test_room"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

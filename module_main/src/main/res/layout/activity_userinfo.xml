@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="UserInfoDataBinding">
+        <import type="com.cxp.module_main.ui.test.activity.databinding.UserInfoActivity.UserInfoChange"/>
+        <import type="com.cxp.module_main.bean.UserInfo"/>
+
+        <variable
+            name="userInfoChange"
+            type="UserInfoChange"/>
+        <variable
+            name="userInfo"
+            type="UserInfo"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="@{userInfo.name,default=CXP}"
+            android:textSize="@dimen/text_size_16sp"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{String.valueOf(userInfo.age)}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@{userInfo.details}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{()->userInfoChange.changeUserInfoName()}"
+            android:text="改变属性 name 和 age  (字段更新，只更新name)"
+            android:textAllCaps="false"
+            android:id="@+id/userinfo_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{()->userInfoChange.changeGoodsDetails()}"
+            android:textAllCaps="false"
+            android:text="改变属性 details 和 age"
+            android:id="@+id/userinfo_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</layout>

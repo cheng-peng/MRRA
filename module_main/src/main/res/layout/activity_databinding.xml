@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="DataBindingDemo">
+        <import type="android.view.View"/>
+        <variable
+            name="onClickListenter"
+            type="com.cxp.lib_common.listener.OnClickListenter"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:onClick="@{()->onClickListenter.onClick(@id/databinding_info)}"
+            android:text="用户信息"
+            android:textAllCaps="false"
+            android:id="@+id/databinding_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{()->onClickListenter.onClick(@id/databinding_collection)}"
+            android:text="集合使用"
+            android:textAllCaps="false"
+            android:id="@+id/databinding_collection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{()->onClickListenter.onClick(@id/databinding_twobinding)}"
+            android:text="双向绑定"
+            android:textAllCaps="false"
+            android:id="@+id/databinding_twobinding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:onClick="@{()->onClickListenter.onClick(@id/databinding_include)}"
+            android:text="Include绑定"
+            android:textAllCaps="false"
+            android:id="@+id/databinding_include"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+</layout>

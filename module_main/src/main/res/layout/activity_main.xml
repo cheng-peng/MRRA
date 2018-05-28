@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="onClickListenter"
+            type="com.cxp.lib_common.listener.OnClickListenter"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/main_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->onClickListenter.onClick(@id/main_news)}"
+            android:text="News"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/main_girls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->onClickListenter.onClick(@id/main_girls)}"
+            android:text="Girls"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/main_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->onClickListenter.onClick(@id/main_fragment)}"
+            android:text="Fragment"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/main_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->onClickListenter.onClick(@id/main_test)}"
+            android:text="Test"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</layout>
