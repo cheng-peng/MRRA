@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:textColor="#f00"
-        android:id="@+id/viewmodel_tv"
-        android:textSize="22sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data class="ViewModelDataBinding">
 
-</android.support.constraint.ConstraintLayout>
+        <variable
+            name="onClickListenter"
+            type="com.cxp.lib_common.listener.OnClickListenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:onClick="@{()->onClickListenter.onClick(@id/viewmodel_fist)}"
+            android:id="@+id/viewmodel_fist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FirstFragment"
+            android:textAllCaps="false" />
+
+        <Button
+            android:onClick="@{()->onClickListenter.onClick(@id/viewmodel_second)}"
+            android:id="@+id/viewmodel_second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SecondFragment"
+            android:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/viewmodel_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_10dp"
+            android:gravity="center"
+            android:textColor="#f00"
+            android:textSize="22sp" />
+
+        <FrameLayout
+            android:id="@+id/viewmodel_fl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+</layout>

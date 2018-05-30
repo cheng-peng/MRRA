@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="FirstDataBinding">
+
+        <variable
+            name="onClickListenter"
+            type="com.cxp.lib_common.listener.OnClickListenter"/>
+
+        <variable
+            name="name"
+            type="String"/>
+    </data>
+
+    <LinearLayout
+        android:clickable="true"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/first_bt"
+            android:text="刷新数据"
+            android:onClick="@{()->onClickListenter.onClick(@id/first_bt)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="@{name,default=CXP}"
+            android:textColor="#f00"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</layout>

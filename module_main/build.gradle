@@ -54,12 +54,6 @@ android {
     dataBinding {
         enabled = true
     }
-
-    //禁用lint
-    lintOptions {
-        abortOnError false
-    }
-
 }
 
 dependencies {

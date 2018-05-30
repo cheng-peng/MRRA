@@ -16,4 +16,27 @@ public class ARouterPath {
      */
     public static final String MAIN_TEST = "/main/test";
 
+
+    /**
+     * 新闻页面
+     */
+    public static final String NEWS_MAIN = "/news/main";
+
+    /**
+     * 新闻Fragment
+     */
+    public static final String NEWS_FRAGMENT = "/news/fragment";
+
+    /**
+     * 妹纸页面
+     */
+    public static final String GIRLS_MAIN = "/girls/main";
+
+    /**
+     * 妹纸Fragment
+     */
+    public static final String GIRLS_FRAGMENT = "/girls/fragment";
+
+
+
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="ItemGirlsDataBinding">
+        <variable
+            name="girlsItem"
+            type="com.cxp.lib_common.bean.ResultsBean" />
+
+        <variable
+            name="callback"
+            type="com.cxp.lib_common.listener.OnItemClickListenter" />
+    </data>
+
+    <FrameLayout
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:onClick="@{()-> callback.onItemClick(girlsItem)}"
+        android:layout_width="match_parent"
+        android:layout_height="260dp">
+
+        <ImageView
+            android:id="@+id/item_girls_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom"
+            android:padding="4dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:background="#66000000"
+            android:text="@{girlsItem.who}"/>
+
+    </FrameLayout>
+</layout>

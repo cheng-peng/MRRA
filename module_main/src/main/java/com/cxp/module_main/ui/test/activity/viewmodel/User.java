@@ -15,6 +15,15 @@ public class User {
     private String name;
     private Integer age;
 
+    public User() {
+    }
+
+    public User(String userId, String name, Integer age) {
+        this.userId = userId;
+        this.name = name;
+        this.age = age;
+    }
+
     public String getUserId() {
         return userId;
     }

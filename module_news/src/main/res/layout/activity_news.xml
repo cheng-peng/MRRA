@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="onClickListenter"
+            type="com.cxp.lib_common.listener.OnClickListenter"/>
+
+    </data>
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/news_bt"
+            android:onClick="@{()->onClickListenter.onClick(@id/news_bt)}"
+            android:text="刷新数据"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/news_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            />
+
+    </LinearLayout>
+</layout>

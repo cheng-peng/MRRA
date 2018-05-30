@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cxp.module_main" >
     <application android:theme="@style/AppTheme">
+
         <activity android:name=".ui.system.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -9,6 +10,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.test.activity.TestActivity"/>
+        <activity android:name=".ui.system.activity.FragmentActivity"/>
         <!--Databinding  Begin-->
         <activity android:name=".ui.test.activity.databinding.DataBinDingActivity"/>
         <activity android:name=".ui.test.activity.databinding.UserInfoActivity"/>
@@ -30,9 +32,9 @@
         <activity android:name=".ui.test.activity.livedata.custom.MyLiveDataActivity"/>
         <!--LiveData  End-->
 
-        <!--ViewModel  Begin-->
+        <!--FragmentViewModel  Begin-->
         <activity android:name=".ui.test.activity.viewmodel.ViewModelActivity"/>
-        <!--ViewModel  End-->
+        <!--FragmentViewModel  End-->
 
     </application>
 

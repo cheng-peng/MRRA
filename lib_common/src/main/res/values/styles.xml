@@ -17,11 +17,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <!--启动页样式及窗口背景-->
-    <!--<style name="SplashTheme" parent="TransparentStatusBarTheme">-->
-    <!--<item name="android:windowBackground">@drawable/bg_launch</item>-->
-    <!--<item name="android:windowFullscreen">false</item>-->
-    <!--</style>-->
+    <!--透明窗口背景-->
+    <style name="Transparent" parent="Base.AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

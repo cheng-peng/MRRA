@@ -1,2 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cxp.module_girls" />
+    package="com.cxp.module_girls">
+
+    <application android:theme="@style/AppTheme">
+        <activity android:name=".ui.activity.GirlsActivity" />
+    </application>
+</manifest>

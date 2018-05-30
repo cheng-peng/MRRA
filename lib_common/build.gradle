@@ -25,6 +25,11 @@ android {
         }
     }
 
+    //dataBinding
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
@@ -34,6 +39,9 @@ dependencies {
     //google
     api deps.support.constraint_layout
     api deps.support.appcompat
+    api deps.support.recyclerview
+    api deps.support.cardview
+    api deps.support.design
 
     //glide
     api deps.glide.glide

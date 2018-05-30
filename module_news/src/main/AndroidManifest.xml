@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cxp.module_news" />
+    package="com.cxp.module_news" >
+    <application android:theme="@style/AppTheme">
+    <activity
+        android:theme="@style/Transparent"
+        android:name=".ui.activity.NewsActivity"/>
+    </application>
+</manifest>

@@ -51,11 +51,17 @@ android {
         }
     }
 
+    //dataBinding
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     annotationProcessor deps.arouter.arouter_compiler
+    annotationProcessor deps.lifecycles.compiler
     implementation project(':lib_common')
 }
